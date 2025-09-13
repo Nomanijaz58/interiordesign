@@ -11,24 +11,26 @@ const Home = () => {
     <div className="home">
       {/* Hero Section */}
       <section className="hero">
-        <div className="hero-content">
-          <div className="hero-text">
-            <h1 className="hero-title">Find your dream space</h1>
-            <p className="hero-description">
-              We are an innovative interior design and construction company dedicated to transforming spaces into stunning works of art.
-            </p>
-            <Link to="/contact" className="btn btn-primary hero-cta">
-              Let's chat
-            </Link>
-          </div>
-        </div>
-        <div className="hero-image">
-          <img
-            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80"
-            alt="Modern living room"
-          />
-          <div className="hero-play-button">
-            <button className="play-btn">▶</button>
+        <div className="container">
+          <div className="hero-content">
+            <div className="hero-text">
+              <h1 className="hero-title">Find your dream space</h1>
+              <p className="hero-description">
+                We are an innovative interior design and construction company dedicated to transforming spaces into stunning works of art.
+              </p>
+              <Link to="/contact" className="btn btn-primary hero-cta">
+                Let's chat
+              </Link>
+            </div>
+            <div className="hero-image">
+              <img
+                src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2058&q=80"
+                alt="Modern living room"
+              />
+              <div className="hero-play-button">
+                <button className="play-btn">▶</button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

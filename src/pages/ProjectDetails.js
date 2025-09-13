@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { projects } from '../data/projects';
 import './ProjectDetails.css';
 
@@ -45,12 +44,7 @@ const ProjectDetails = () => {
       {/* Project Hero */}
       <section className="project-hero">
         <div className="container">
-          <motion.div
-            className="project-hero-content"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div className="project-hero-content">
             <h1 className="project-title">{project.title}</h1>
             <div className="project-meta">
               <span className="project-category">{project.category}</span>
@@ -58,21 +52,16 @@ const ProjectDetails = () => {
               <span className="project-area">📐 {project.area}</span>
               <span className="project-completed">📅 {project.completed}</span>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Main Project Image */}
       <section className="project-main-image">
         <div className="container">
-          <motion.div
-            className="main-image-container"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
+          <div className="main-image-container">
             <img src={project.images[0]} alt={project.title} />
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -80,13 +69,7 @@ const ProjectDetails = () => {
       <section className="section project-info">
         <div className="container">
           <div className="project-info-content">
-            <motion.div
-              className="project-description"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
+            <div className="project-description">
               <h2>Project Overview</h2>
               <p>{project.description}</p>
               <div className="project-details-list">
@@ -106,21 +89,15 @@ const ProjectDetails = () => {
               <Link to="/contact" className="btn btn-primary">
                 Contact us
               </Link>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="project-gallery"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
+            <div className="project-gallery">
               {project.images.slice(1, 3).map((image, index) => (
                 <div key={index} className="gallery-item">
                   <img src={image} alt={`${project.title} ${index + 2}`} />
                 </div>
               ))}
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -128,26 +105,13 @@ const ProjectDetails = () => {
       {/* Image Gallery */}
       <section className="section gallery-section">
         <div className="container">
-          <motion.div
-            className="gallery-grid"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="gallery-grid">
             {project.images.map((image, index) => (
-              <motion.div
-                key={index}
-                className="gallery-image"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
+              <div key={index} className="gallery-image">
                 <img src={image} alt={`${project.title} ${index + 1}`} />
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -155,33 +119,19 @@ const ProjectDetails = () => {
       {relatedProjects.length > 0 && (
         <section className="section related-projects">
           <div className="container">
-            <motion.div
-              className="text-center mb-6"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
+            <div className="text-center mb-6">
               <h2 className="section-title">Related Projects</h2>
-            </motion.div>
+            </div>
             
             <div className="related-projects-grid">
-              {relatedProjects.map((relatedProject, index) => (
-                <motion.div
-                  key={relatedProject.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <Link to={`/projects/${relatedProject.id}`} className="related-project-card">
-                    <img src={relatedProject.images[0]} alt={relatedProject.title} />
-                    <div className="related-project-info">
-                      <h3>{relatedProject.title}</h3>
-                      <p>{relatedProject.category}</p>
-                    </div>
-                  </Link>
-                </motion.div>
+              {relatedProjects.map((relatedProject) => (
+                <Link key={relatedProject.id} to={`/projects/${relatedProject.id}`} className="related-project-card">
+                  <img src={relatedProject.images[0]} alt={relatedProject.title} />
+                  <div className="related-project-info">
+                    <h3>{relatedProject.title}</h3>
+                    <p>{relatedProject.category}</p>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

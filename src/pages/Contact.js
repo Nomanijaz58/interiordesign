@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import ContactForm from '../components/ContactForm';
 import './Contact.css';
 
@@ -9,12 +8,7 @@ const Contact = () => {
       {/* Hero Section */}
       <section className="contact-hero">
         <div className="container">
-          <motion.div
-            className="contact-hero-content"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
+          <div className="contact-hero-content">
             <div className="contact-info">
               <h1 className="hero-title">Contact us</h1>
               <div className="contact-details">
@@ -41,20 +35,14 @@ const Contact = () => {
             <div className="contact-form-container">
               <ContactForm />
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* Map Section */}
       <section className="map-section">
         <div className="container">
-          <motion.div
-            className="map-container"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+          <div className="map-container">
             <div className="map-placeholder">
               <div className="map-content">
                 <h3>Our Location</h3>
@@ -73,7 +61,7 @@ const Contact = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -81,13 +69,7 @@ const Contact = () => {
       <section className="section office-info">
         <div className="container">
           <div className="office-info-grid">
-            <motion.div
-              className="office-hours"
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
+            <div className="office-hours">
               <h3>Office Hours</h3>
               <div className="hours-list">
                 <div className="hours-item">
@@ -103,15 +85,9 @@ const Contact = () => {
                   <span>Closed</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div
-              className="contact-methods"
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              viewport={{ once: true }}
-            >
+            <div className="contact-methods">
               <h3>Get in Touch</h3>
               <div className="contact-methods-list">
                 <div className="method-item">
@@ -139,7 +115,7 @@ const Contact = () => {
                   </div>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
